@@ -1,0 +1,18 @@
+.btn{
+    background-color: $second;
+    color: $light;
+    padding: 7px 15px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 300ms ease;
+
+    &:hover{
+        background-color: darken($second, 20);
+    }
+}
+
+.btn-second{
+    background-color: darken($second, 20);
+    font-weight: bold;
+}

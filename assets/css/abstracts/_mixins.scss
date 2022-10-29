@@ -1,0 +1,17 @@
+@mixin align($p : space-between){
+    display: flex;
+    align-items: center;
+    justify-content: $p;
+}
+
+@mixin cloudAnimation($par,$sec,$left,$top){
+    left: $left;
+    top: $top;
+    animation: cloud-#{$par} $sec linear infinite forwards alternate;
+
+    @keyframes cloud-#{$par} {
+        to{
+            left: $left + 5%;
+        }
+    }
+}

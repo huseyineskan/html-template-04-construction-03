@@ -1,0 +1,218 @@
+.window{
+    background-color: $bg;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        background-image: url(../img/hook.svg), url(../img/pc.svg);
+        background-position: right 10%,center 25%;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 35%, 80%;
+        padding: 20px 10px;
+        height: 100%;
+        position: relative;
+        z-index: 2;
+
+        .cloud1{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background-image: url(../img/cloud.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            @include cloudAnimation(1,2s,0,25%);
+        }
+
+        .cloud2{
+            position: absolute;
+            width: 70px;
+            height: 40px;
+            background-image: url(../img/cloud.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            @include cloudAnimation(2,4s,40%,12%);
+        }
+        .cloud3{
+            position: absolute;
+            width: 100px;
+            height: 90px;
+            background-image: url(../img/cloud.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            @include cloudAnimation(3,3s,70%,20%);
+        }
+    }
+
+    .bg-pattern{
+        border: 370px solid darken($bg, 10);
+        border-left: 370px solid transparent;
+        border-top: 370px solid transparent;
+        border-right: 370px solid transparent;
+        right: -370px;
+        bottom: 0;
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+    }
+
+    section{
+        margin-top: 90%;
+
+        .title{
+            font-size: 30px;
+            border-left: 10px solid $second;
+            padding-left: 10px;
+        }
+
+        .sub-title{
+            font-size: 22px;
+            border-bottom: 2px solid $light;
+        }
+
+        .text{
+            margin-top: 20px;
+            
+            h4{
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .detailBox {
+        position: absolute;
+        padding: 0 10px;
+        top: 0;
+        left: 100%;
+        bottom: 0;
+        background: $second;
+        width: 100%;
+        z-index: 7;
+        @include align(center);
+        flex-direction: column;
+        text-align: center;
+        transition: left 300ms ease;
+
+        p:not(:last-child){
+            margin-bottom: 15px;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        h4{
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .close-detail{
+            position: absolute;
+            right: 10px;
+            top: 20px;    
+
+            .bar1{
+                -webkit-transform: rotate(-45deg) translate(-2px, 5px);
+            }
+        
+            .bar2{
+                    visibility: hidden;
+            }
+            
+            .bar3{
+                -webkit-transform: rotate(45deg) translate(-3px, -10px);
+            }
+        }
+    }
+
+    .close-detail > div {
+        background: $light;
+        width: 40px;
+        height: 5px;
+        margin-bottom: 6px;
+    }
+    
+    
+}
+
+@media only screen and (min-width: 768px){
+
+    body{
+        @include align(center);
+        height: 100vh;
+    }
+    
+    .window{
+        width: 80%;
+        height: 700px;
+        max-width: 1080px;
+
+        
+        .logo span{
+            font-size: 30px;
+        }
+
+        .container{
+            background-position: right 20% ,90% 50%;
+            background-repeat: no-repeat;
+            background-size: 200px, 400px;
+            padding: 40px;
+
+            .cloud1{
+                width: 120px;
+                height: 70px;
+                @include cloudAnimation(1,3s,50%,35%);
+            }
+            .cloud2{
+                width: 80px;
+                height: 50px;
+                @include cloudAnimation(2,4s,70%,20%);
+            }
+            .cloud3{
+                width: 100px;
+                height: 50px;
+                @include cloudAnimation(3,2s,85%,40%);
+            }
+        }
+    }
+
+    section{
+        margin-top: 10% !important;
+        width: 50%;
+
+        .title{
+            font-size: 55px !important;
+        }
+
+        .sub-title{
+            font-size: 42px !important;
+        }
+
+        .text{
+            
+            margin-top: 45px !important;
+
+            h4{
+                font-size: 28px;
+                margin-bottom: 5px;
+            }
+
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+
+    .detailBox{
+        padding: 0 100px !important;
+
+        .close-detail{
+            right: 50px !important;
+            top: 50px !important;   
+        }
+    }
+}
+
+.detailBoxShow{
+    left: 0 !important;
+}

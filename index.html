@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Under Costruction</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+</head>
+<body>
+
+    <div class="window">
+        <div class="bg-pattern"></div>
+        <div class="container">
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+            <div class="cloud3"></div>
+            <header>
+                <div class="logo">
+                    <a href="#" class="logo">
+                        <span>Company Logo</span>
+                    </a>
+                </div>
+                <div class="open-menu" onclick="openMenu(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>            
+                </nav>
+            </header>
+            <section>
+                <div class="content">
+                    <h1 class="title">Under <br>Construction</h1>
+                    <!-- <span class="sub-title">Landing Page</span> -->
+                    <div class="text">
+                        <h4>HEADLINE</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates beatae, tenetur aliquid quidem totam autem eligendi, veritatis at praesentium voluptatum facilis.</p>
+                        <a href="#" onclick="showDetail(this)" class="btn">Read More</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="detailBox">
+            <div class="close-detail" onclick="showDetail(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <h4>Detail Heading</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, impedit laudantium nulla, dignissimos natus necessitatibus minima, sequi corrupti esse recusandae cupiditate dolorum reiciendis at autem a consequatur illum dicta maiores.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, ut vel temporibus magni culpa fuga minus cumque fugit ad neque repudiandae, sequi, quidem eum similique vero voluptatum enim! Qui, amet?</p>
+            <a href="#" class="btn btn-second">Call Now</a>
+        </div>
+    </div>
+    
+
+    <script>
+        function openMenu(e){
+            e.classList.toggle("iconChange");
+            document.getElementById('nav').classList.toggle('showMenu');
+        }
+
+        function showDetail(e){
+            document.querySelector('.detailBox').classList.toggle("detailBoxShow");
+        }
+    </script>
+</body>
+</html>
